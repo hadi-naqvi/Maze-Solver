@@ -121,7 +121,14 @@ import java.util.*;
 		 // Iterates over every column in every row and prints each cell in the maze matrix, and prints each new row on a new line, which outputs the entire maze
 		 for (int row = 0; row < maze.length; row++) {
 			 for (int col = 0; col < maze[0].length; col++) {
-				 System.out.print(maze[row][col] + " ");
+				 // Outputs the '+' chars showing the path in green to make it easier to see
+				 if (maze[row][col] == '+') {
+					System.out.print("\u001B[32m" + "+" + "\u001B[0m" + " ");
+				 }
+				 // Outputs every cell in the maze/matrix
+				 else {
+					 System.out.print(maze[row][col] + " ");
+				 }
 			 }
 			 System.out.println();
 		 }
@@ -195,7 +202,7 @@ import java.util.*;
 		 // Stores the 4 directional moves the robot can make as chars
 		 char[] directions = {'L', 'R', 'U', 'D'};
 		 
-		 // Base-case: If there are no more paths to search, there is no solution and the method returns an empty string (No solution)
+		 // Base-case #1: If there are no more paths to search, there is no solution and the method returns an empty string (No solution)
 		 if (paths.size() == 0) {
 			 return "";
 		 }
@@ -204,7 +211,7 @@ import java.util.*;
 		 String path = paths.poll();
 		 int[] pathEndPos = findPos(maze, startPos, path);
 		 
-		 // Base-case: If the path currently being searched leads to the end/goal, then the method returns its path (A solution is found)
+		 // Base-case #2: If the path currently being searched leads to the end/goal, then the method returns its path (A solution is found)
 		 if (maze[pathEndPos[0]][pathEndPos[1]] == 'G') {
 			 return path;
 		 }
