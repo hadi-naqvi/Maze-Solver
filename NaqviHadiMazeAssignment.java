@@ -216,7 +216,7 @@ import java.util.*;
 			 return path;
 		 }
 		 
-		 // Finds all valid adjacent positions the robot can move to from its current position in the path and adds them to the queue so that they can be searched
+		 // Finds all valid adjacent positions the robot can move to from its current position in the path and enqueues the path leading to the position to the queue so that they can be searched
 		 for (char direction: directions) {
 			 int[] adjacentPos = findPos(maze, startPos, path + Character.toString(direction));
 			 if (validPos(maze, adjacentPos, visitedLocations)) {
@@ -225,7 +225,7 @@ import java.util.*;
 			 }
 		 }
 		 
-		 // Recursively keeps searching paths in the maze until there is either a solution or no solution (The 2 base cases above)
+		 // Recursively keeps searching paths in the queue until there is either a solution path or no solution (The 2 base cases above)
 		 return solveMaze(maze, paths, visitedLocations, startPos);
 	 }
 	 
