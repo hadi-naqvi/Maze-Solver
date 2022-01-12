@@ -1,15 +1,14 @@
 /**
- * Recursion Maze Assignment | Recursive Breadth-First Maze Solver Algorithm
+ * Recursive Breadth-First Maze Solver Algorithm
  * Date: October 18th, 2021
  * @author Hadi Naqvi
- * Teacher: Mr. Ho
  */
 
 // Imports the I/O package to read text files and the java.util package in order to use ArrayLists/Queues
 import java.io.*;
 import java.util.*;
 
- public class NaqviHadiMazeAssignment {
+ public class MazeSolver {
      public static void main(String[] args) throws IOException {
          // Imports the maze from its text file and stores it in a 2D char array
 		 char[][] maze = importMaze();
